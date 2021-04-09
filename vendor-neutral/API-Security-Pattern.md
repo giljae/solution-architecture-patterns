@@ -21,7 +21,7 @@ API는 외부 및 내부에 중요한 비즈니스 정보를 공유하는 인터
 
 사용자가 비즈니스 정보에 접근하도록 허용하면 비즈니스 생태계 측면에서 다른 업체와 경쟁하는데 도움이 됩니다. 그러나 보안 및 제어없이 중요한 비즈니스 정보를 노출 할 수는 없습니다. API를 제어하지 않으면 비즈니스를 위험가 처해질 수 있습니다.
 
-API 보안은 10년동안 진화해왔습니다. API 보안에는 크게 두 가지 주요 요소가 존재하빈다.
+API 보안은 10년동안 진화해왔습니다. API 보안에는 크게 두 가지 주요 요소가 존재합니다.
 
 * 인증(Authentication) - 사용자 식별 및 검증
 * 승인(Authorization) - 비즈니스 정보에 대한 접근 권한
@@ -37,25 +37,24 @@ API 보안은 10년동안 진화해왔습니다. API 보안에는 크게 두 가
 OAuth2는 엑세스를 위임하는 매커니즘을 통해 API 보안의 실질적인 표준이 되었습니다.OAuth2를 사용하면 자격 증명을 제공하지 않고도 애플리케이션이 사용자를 대신하여 특정 리소스에 접근할 수 있는 권한을 부여할 수 있습니다. 이 모델을 사용하면 보안 ID 공급자에 대해서 인증을 하게 됩니다. 애플리케이션(웹,모바일)은 사용자를 대신하여 엑세스 토큰을 받고 해당 토큰을 이용하여 허용된 정보에 접근할 수 있습니다.
 
 #### OIDC
-Sometimes these applications wanted to identify the user information (without password) and the OAuth2 framework didn't have a standard mechanism to do this. Because of this limitation, engineers came up with the Open ID Connect (OIDC) framework through that applications can request for basic user information once the user had given permissions to access a certain resource (with user consent).
+간혹 애플리케이션은 사용자 정보를 식별하기를 원합니다. 그러나 OAuth2에는 이를 수행하는 표준 매커니즘이 없습니다. 이런 제한으로 인해 사용자가 특정 리소스에 접근할 수 있는 권한을 부여하면(사용자 동의하에) 애플리케이션이 기본 사용자 정보를 요청할 수 있는 OIDC(Open ID Connect)를 고안했습니다.
 
 #### Basic Authentication
-On top of all these modern security frameworks, there are some enterprises who still uses username and password based authentication (basic authentication) for API security. 
+위에서 언급한 최신 보안 매커니즘외에도 API 보안을 위해 사용자 아이디 및 패스워드를 기반으로 인증(기본 인증)하는 방식을 계속 사용하는 기업도 존재합니다.
 
 #### Token exchange with existing security mechanisms
-Sometimes as an enterprise solutions architect, you need to introduce new concepts like API management without modifying the existing applications and the user experience. If the end user applications are out of your control, you might not have the luxury of completely introducing a new security mechanism like OAuth2 with these applications. In such cases, you need to build your api management layer so that it can interoperate with the existing security mechanisms like SAML2, Kerberos, NTLM and build a token exchange mechanism around the applications. Users might not see the difference in security implementation since you can either have a token proxy at the enterprise level or develop some code at the client side applications to perform the token exchange. 
+엔터프라이즈 솔루션 아키텍트는 기존 애플리케이션 및 사용자 경험을 수정하지 않고 API 관리와 같은 새로운 개념을 도입해야 합니다. 애플리케이션을 제어할 수 없는 경우 OAuth2와 같은 새로운 보안 매커니즘을 도입할 수가 없게됩니다. 이런 경우에는 SAML2, Kerberos, NTLM과 같은 기존 보안 매커니즘과 상호 운용할 수 있도록 API 관리 계층을 구축하고 애플리케이션 기반의 토큰 교환 매커니즘을 구축 해야 합니다. 엔터프라이즈 수준에서 토큰 프록시를 사용하거나 토큰 교환을 위해 클라이언트측 애플리케이션의 일부 코드만 수정하기에 사용자는 보안 구현의 차이를 느끼지 못할 수 있습니다.
 
 ### API Gateway and the Identity Provider
-API Gateway (sometimes called as API Manager) is the runtime component which recieves all the requests from different users through applications. It is the duty of gateway to validate the user requests before calling the actual endpoints which provides the business information. API Gateway uses a special component to validate the user identities and the access control levels named as Identity Provider. It can be a fully fledged Identity and Access Management product or a component built as part of the same API Management product (e.g. Key Manager). This Identity Provider component takes care of all the security related tasks like
+API Gateway는 클라이언트의 모든 요청을 수신하는 런타임 구성 요소입니다. 비즈니스 정보를 제공하는 하단의 엔드 포인트를 호출하기 전에 사용자 요청을 검증하는 것이 게이트웨이의 의무입니다. API Gateway는 사용자 자격 증명과 자격 증명 공급자라는 접근 제어 수준을 확인합니다. 즉, 아래와 같은 모든 보안 관련 작업을 처리합니다.
 
-- User management
-- Key and token management (OAuth2 and OIDC)
-- Entitlement management (XACML)
-- Authentication
-- Authorization
+* 사용자 관리
+* Key 및 Token 관리 (OAuth2 및 OIDC)
+* 권한 관리 (XACML)
+* 인증
+* 권한 부여
 
-Sometimes, the same IdP is used for managing authentication and authorization for existing back end applications as well. If a user wants to access an API through an application, user will be redirected to the authentication endpoint of this IdP (or to another IdP if there is federation) and the user credentials are provided here. These user credentials are securely stored within this IdP. If the enterprise already has an IdP, it makes sense to use that to provide these token validation and token generation functionalities. To do that, the particular IdP should have the retrospective API implemented on that server. 
+간혹 기존 백엔드 애플리케이션에 대한 인증 및 권한을 관리하는데 동일한 IDP가 사용되는 경우도 있습니다. 사용자가 애플리케이션을 통해 API에 접근하려는 경우 IDP로 리다리엑션되고 여기서 사용자 자격 증명이 제공됩니다. 기업에 이미 IDP가 있는 경우에는 이를 사용하여 토큰 유효성 검사 및 토큰 생성 기능을 제공하는 것이 좋습니다.
 
-### Connecting to backend endpoints
-Sometimes the authentication and authorization at the API Gateway is not sufficient and the back end services also expects some information about the user to validate the data access at that level. In such cases, most of the time, API gateway should pass the basic authentication information coming from the client side or a JWT generated out of the access token.
-
+### 백엔드 엔드 포인트에 연결
+때로는 API Gateway의 인증 및 권한 부여가 충분하지 않기에 백엔드 서비스는 데이터 접근의 유효성을 검사하기 위해 사용자에 대한 일부 정보를 원합니다. 이런 경우에는 API Gateway는 클라이언트에서 오는 기본 인증 정보 또는 Access Token에서 생성된 JWT를 전달해야 합니다.
