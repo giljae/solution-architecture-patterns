@@ -17,23 +17,24 @@ API는 외부 및 내부에 중요한 비즈니스 정보를 공유하는 인터
 * 웹 애플리케이션
 * 웹 사이트
 
-### Protecting your APIs
+### API 보호
 
-Allowing users to access your business information helps you to expand your business and compete with the other vendors. But due to the competition and the nature of the internet, you cannot expose your valuable business information without any security and control. If you don't control your APIs, there are hackers who will jeopardize your business even before you think about it by various means. 
+사용자가 비즈니스 정보에 접근하도록 허용하면 비즈니스 생태계 측면에서 다른 업체와 경쟁하는데 도움이 됩니다. 그러나 보안 및 제어없이 중요한 비즈니스 정보를 노출 할 수는 없습니다. API를 제어하지 않으면 비즈니스를 위험가 처해질 수 있습니다.
 
-API Security is an evolving concept which has been there for less than a decade. When it comes to securing your APIs, there are 2 main factors. 
+API 보안은 10년동안 진화해왔습니다. API 보안에는 크게 두 가지 주요 요소가 존재하빈다.
 
-- Authentication - Identifying and validating the user identity (who you are)
-- Authorization - Recognizing the level of access a user has to the business information (what you can do)
+* 인증(Authentication) - 사용자 식별 및 검증
+* 승인(Authorization) - 비즈니스 정보에 대한 접근 권한
 
-User authentication is the basic requirement of providing access to any system. That method has been there for a longest of time since the beginning of computers. In the past you could have keep your user names and password in some vault and use them to authenticate into the systems you want to access. With the growth of different business systems and the other web applications you access day to day, sometimes keeping all these usernames and passwords has become a difficult task. Most people uses same credentials for their bank accounts, social logins, computer logins as well as business applications. So providing this information to one system can be dangerous if some hackers access this information (Facebook recently found out that they have stored user credentials in plain-text in their databases). 
+인증은 모든 시스템에 대한 접근을 제어하기 위한 기본 요구 사항입니다. 이 방법은 IT역사적으로 가장 오랫동안 존재했습니다. 과거에는 사용자 아이디와 패스워드를 보관하고 이를 사용하여 접근하려는 시스템을 인증했었습니다.
+그러나 매일 엑세스하는 다양한 비즈니스 시스템 및 웹 애플리케이션이 성장함에 따라 모든 사용자 아이디와 패스워드를 유지하는 것이 매우 어려운 작업이 되었습니다. 대부분의 사람들은 은행 계좌, 소셜 로그인, 컴퓨터 로그인 및 비즈니스 애플리케이션에 동일한 자격 증명을 사용합니다. 따라서 악의적 목적을 지닌 해커가 해당 정보에 엑세스하는 경우, 하나의 시스템에서 이 정보를 제공하는 것은 매우 위험 할 수 있습니다.
 
-Due to various reasons, people wanted a mechanism to reuse their existing identities without compromising their credentials so that you can use different applications while having a single username password pair stored in one system which you trust. In a business or enterprise scenario, you can have your enterprise account where your credentials are stored securely in enterprise user store (LDAP, AD). 
+이런 상황들로 인해 사용자가 신뢰할 수 있는 하나의 시스템에 단일 사용자 아이디 및 패스워드를 저장하면서 다른 애플리케이션에서 사용할 수 있도록 자격 증명을 손상시키지 않고 기존 ID를 재사용 할 수 있는 매커니즘을 원하게 되었습니다. 비즈니스 또는 엔터프라이즈 시나리오에서 자격 증명이 LDAP 또는 AD에 안전하게 저장되는 방식을 가질 수 있습니다.
 
-### API Security mechanisms
+### API 보안 매커니즘
 
 #### OAuth2
-OAuth2 has become the defacto standard in securing APIs through access delegation mechanism. With OAuth2, you can give permissions for an applications to access a certain set of resources on behalf of you to provide a valuable service to you without giving your credentials. With this model, you authenticate against your secured identity provider. The application (web, mobile) will get an access token on behalf of you and access the information which you are allowed through the token. 
+OAuth2는 엑세스를 위임하는 매커니즘을 통해 API 보안의 실질적인 표준이 되었습니다.OAuth2를 사용하면 자격 증명을 제공하지 않고도 애플리케이션이 사용자를 대신하여 특정 리소스에 접근할 수 있는 권한을 부여할 수 있습니다. 이 모델을 사용하면 보안 ID 공급자에 대해서 인증을 하게 됩니다. 애플리케이션(웹,모바일)은 사용자를 대신하여 엑세스 토큰을 받고 해당 토큰을 이용하여 허용된 정보에 접근할 수 있습니다.
 
 #### OIDC
 Sometimes these applications wanted to identify the user information (without password) and the OAuth2 framework didn't have a standard mechanism to do this. Because of this limitation, engineers came up with the Open ID Connect (OIDC) framework through that applications can request for basic user information once the user had given permissions to access a certain resource (with user consent).
