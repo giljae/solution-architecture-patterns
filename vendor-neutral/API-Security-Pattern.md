@@ -1,20 +1,21 @@
 ## API Security Pattern
 
-### Introduction
+### 소개
 
-APIs are the interface to external and internal users through which valuable business information is shared. Protecting these valuable information access is crucial in enterprise software design. 
+API는 외부 및 내부에 중요한 비즈니스 정보를 공유하는 인터페이스입니다. 이런 정보에 대한 접근을 보호하는 것은 엔터프라이즈 소프트웨어 설계에서 매우 중요합니다.
 
 ![API Security Pattern](images/API-Security-Pattern.png)
 
-APIs provides you with the ability to compete in the digital marketplaces where brick and mortar stores are no longer dominating. The entire consumer and business landscape is becoming more and more digital savvy and it is essential for any enterprise regardless of their domain, to blend into this digital transformation. Companies from manufacturing, healthcare, automobile to consumer electronics are some of the examples which were not relying on digital business in the past but rapidly moving through digital journeys. 
+소비자 및 비즈니스는 디지털 환경에 익숙해지고 있습니다. 도메인에 관계 없이 오늘날 모든 기업은 디지털 전환을 시도하는 것이 필수적입니다. API는 디지털 환경에서 경쟁할 수 있는 기능을 제공합니다.
 
-The market has become so large that a product you make in some rural village in SriLanka can be sold to an individual who is living in New York through the online digital e-commerce website like ebay or alibaba. Rather than going into a retail or wholesale shop, people would like to order items from their fingertips by using a mobile phone or a tablet. Enterprises has been doing well without these mobile apps and websites for a longest of time in the past. But that time is over. 
+스리랑카의 일부 시골 마을에서 만든 제품을 ebay 또는 alibaba와 같은 온라인 전자 상거래를 통해 뉴욕에 거주하는 개인에게 판매 할 수 있습니다. 소매점이나 도매점에 가지 않고도 휴대폰이나 태블릿을 사용하여 물건을 주문할 수 있습니다. 과거에는 이런 전자 상거래 사이트 없이도 사업을 잘해왔지만, 이제는 세상이 변했습니다.
 
-Now enterprises are reqiured to offer their business services through different channels to their internal and external consumers. Those different consumers will use different mediums to access your business information. Having a set of well defined, well documented, browsable set of APIs would allow these different users to consume these business information with all sorts of different mediums. Some of the mediums are
+이제 기업은 다양한 채널을 통해 내부 및 외부 소비자에게 비즈니스 서비스를 제공해야 합니다. 소비자는 여러 매체를 사용하여 비즈니스 정보에 접근합니다. 잘 정의되고, 문서화되고 탐색 가능한 API 세트를 보유하면 서로 다른 사용자가 다른 매체에서도 비즈니스 정보를 사용할 수 있습니다.
 
-- Mobile application
-- Web application (server based)
-- Web sites (Single Page Application based)
+다양한 매체
+* 모바일 애플리케이션
+* 웹 애플리케이션
+* 웹 사이트
 
 ### Protecting your APIs
 
