@@ -2,7 +2,7 @@
 이 저장소에는 엔터프라이즈 소프트웨어 시스템을 구축하는데 재사용 할 수 있는 솔루션 아키텍처 패턴이 포함되어 있습니다. 여기서 소개된 패턴 중 일부는 시장에서 잘 사용되고 있고 일부는 점진적으로 진화하고 있는 패턴입니다.
 본 글은 https://github.com/chanakaudaya/solution-architecture-patterns의 글을 한국어로 번역하였습니다.
 
-## Vendor neutral architecture patterns
+## 벤더 중립적 아키텍처 패턴
 
 - API Security pattern (API 보안 패턴)
 [API Security Pattern](vendor-neutral/API-Security-Pattern.md)
@@ -76,8 +76,8 @@
 [Microservices Governance and API Management Pattern](vendor-neutral/Microservices-Governance-And-API-Management.md)
 
 
-## Industry specific architecture patterns
-These patterns are specific to a business domain or an industry. Most of these patterns can be considered as reference archtiectures.
+## 산업별 아키텍처 패턴
+여기서 설명하는 패턴은 비즈니스 도메인 또는 인더스트리에 따라 다르기에 레퍼런스 아키텍처로 참고해주세요.
 
 - Telecommunication Reference Architecture
 [Telecommunication Reference Architecture](industry-specific/Telecommunication-reference-architecture-pattern.md)
@@ -101,8 +101,8 @@ These patterns are specific to a business domain or an industry. Most of these p
 - Automotive industry Information Technology Reference Architecture [Automotive industry Information Technology Reference Architecture](industry-specific/Automotive-Industry-Information-Technology-Reference-Architecture.md)
 
 
-## Vendor specific architecture patterns
-These patterns are specific to a vendor and some of the terminology used in these diagrams may not be common across other vendors. 
+## 공급 업체별 아키텍처 패턴
+여기서 설명하는 패턴은 벤더에 따라 다르며, 언급된 일부 용어는 다른 벤더에서는 일반적이지 않을 수 있습니다.
 
 - Amazon Web Services (AWS) [Amazon Web Services (AWS)](vendor-specific/aws)
 
@@ -118,11 +118,11 @@ These patterns are specific to a vendor and some of the terminology used in thes
 
 - WSO2 [WSO2](vendor-specific/wso2)
 
-## Technology selection guides
-- API Management platform selection guide [API Management platform selection guide](technology-selection-guides/API-Management-Platform-selection-guide.md)
-- Integration platform selection guide [Integration platform selection guide](technology-selection-guides/Integration-Platform-selection-guide.md)
+## 기술 선택 가이드
+- API 관리 플랫폼 선택 가이드 [API Management platform selection guide](technology-selection-guides/API-Management-Platform-selection-guide.md)
+- Integration 플랫폼 선택 가이드 [Integration platform selection guide](technology-selection-guides/Integration-Platform-selection-guide.md)
 
-## Related architecture resources
+## 연관 아키텍처 리소스
 - Technology reference architecture [Technology reference architecture](https://github.com/wso2/reference-architecture)
 - Design patterns for humans [Design patterns for humans](https://github.com/kamranahmedse/design-patterns-for-humans)
 - Awesome scalability [Awesome scalability](https://github.com/binhnguyennus/awesome-scalability)
