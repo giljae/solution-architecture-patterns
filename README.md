@@ -129,11 +129,11 @@ These patterns are specific to a vendor and some of the terminology used in thes
 - Awesome design patterns [Awesome design patterns](https://github.com/DovAmir/awesome-design-patterns)
 - Awesome distributed systems [Awesome distributed systems](https://github.com/theanalyst/awesome-distributed-systems)
 
-# License details
+# 라이센스 
 
 Shield: [![CC BY 4.0][cc-by-shield]][cc-by]
 
-This work is licensed under a
+본 작업물은 아래의 라이센스를 따릅니다.
 [Creative Commons Attribution 4.0 International License][cc-by].
 
 [![CC BY 4.0][cc-by-image]][cc-by]
