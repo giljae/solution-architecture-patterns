@@ -1,6 +1,6 @@
 # 솔루션 아키텍처 패턴
 이 저장소에는 엔터프라이즈 소프트웨어 시스템을 구축하는데 재사용 할 수 있는 솔루션 아키텍처 패턴이 포함되어 있습니다. 여기서 소개된 패턴 중 일부는 시장에서 잘 사용되고 있고 일부는 점진적으로 진화하고 있는 패턴입니다.
-본 글은 https://github.com/chanakaudaya/solution-architecture-patterns의 글을 한국어로 번역하였습니다.
+본 글은 https://github.com/chanakaudaya/solution-architecture-patterns의 글을 한국어로 번역하고 있으며, 언제 완료될지는 아직 알 수 없습니다.
 
 ## 벤더 중립적 아키텍처 패턴
 
