@@ -1,5 +1,5 @@
-# Solution Architecture Patterns
-This repository contains solution architecture patterns which can be reused to build enterprise software systems. Some of these patterns are well established in the industry and some of them are evolving patterns while there is another set which is at conceptual level. 
+# 솔루션 아키텍처 패턴
+이 저장소에는 엔터프라이즈 소프트웨어 시스템을 구축하는데 재사용 할 수 있는 솔루션 아키텍처 패턴이 포함되어 있습니다. 여기서 소개된 패턴 중 일부는 시장에서 잘 사용되면서 진화하는 패턴입니다.
 
 ## Vendor neutral architecture patterns
 
