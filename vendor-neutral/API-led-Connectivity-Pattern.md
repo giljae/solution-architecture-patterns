@@ -4,10 +4,11 @@
 
 디지털 트랜스포메이션의 기본 요구 사항은 기존 시스템, 애플리케이션 및 데이터를 통합하는 것입니다. 본 글에서는 "API기반의 연결 또는 통합"개념을 기반으로 WSO2 제품을 사용하는 것을 예로써 설명합니다.
 
-## Architecture
-“Every business is running on software” is not a false statement. It is the 80% case and we can consider that as the practical norm in the enterprise. Running business operations using software applications is not something to make your enterprise special. But if you are exposing your business products and services through digital mediums, that is indeed a specialty depending on your vertical. Industries like retail, banking, education are already adopting the technology for internal and external operations. But there are certain industries that are still not utilizing the power of the digital age and the value of structural information exchange patterns to boost their businesses. 
+## 아키텍처
 
-Application Programming Interface or an API defines an interface that can be used by internal and external consumers to get services from your business. It can be as simple as buying a product through a web site, sending a purchase order to supply raw material or even updating the EOD profit and loss statement to the head office branch. APIs allow you to build interactions amongst your customers, partners, employees and your entire business. 
+"지구상의 모든 비즈니스가 소프트웨어에서 동작되고 있습니다."라는 말은 잘못된 얘기가 아닙니다. 이것은 약 80% 사례를 의미합니다. 애플리케이션을 사용하여 비즈니스 운영을 실행하는 것은 기업을 특별하는 만드는 것이 아닙니다. 소매, 은행, 교육, 커머스와 같은 산업은 이미 내부 및 외부 운영을 위해 소프트웨어를 채택하고 있습니다. 그러나 현재까지도 디지털의 가치를 활용하여 비즈니스를 강화하지 못하는 특정 산업이 존재합니다.
+
+API(Application Programming Inteface)는 내부 및 외부 사용자가 비즈니스에서 데이터를 가져오는데 사용할 수 있는 인터페이스를 정의합니다. 웹 사이트를 통해 제품을 구매하거나, 원자재 공급을 위한 구매 주문서를 보내거나 손익 계산서를 본사에 업데이트 하는 것처럼 간단한 일을 할 수 있습니다. API를 사용하면 고객, 파트너, 직원등 전체 비즈니스의 이해관계자간의 상호 작용을 구축할 수 있습니다.
 
 ### Business Architecture
 
