@@ -5,6 +5,10 @@
 
 본 글은 https://github.com/chanakaudaya/solution-architecture-patterns의 글을 한국어로 번역하고 있으며, 언제 완료될지는 아직 알 수 없습니다.
 
+번역자:
+* 주길재 (@giljae)
+* 윤지상 (@jisangyun)
+
 ## 벤더 중립적 아키텍처 패턴
 
 - API Security pattern (API 보안 패턴)
