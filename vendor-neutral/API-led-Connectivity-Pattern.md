@@ -8,31 +8,25 @@
 
 "지구상의 모든 비즈니스가 소프트웨어에서 동작되고 있습니다."라는 말은 잘못된 얘기가 아닙니다. 이것은 약 80% 사례를 의미합니다. 애플리케이션을 사용하여 비즈니스 운영을 실행하는 것은 기업을 특별하는 만드는 것이 아닙니다. 소매, 은행, 교육, 커머스와 같은 산업은 이미 내부 및 외부 운영을 위해 소프트웨어를 채택하고 있습니다. 그러나 현재까지도 디지털의 가치를 활용하여 비즈니스를 강화하지 못하는 특정 산업이 존재합니다.
 
-API(Application Programming Inteface)는 내부 및 외부 사용자가 비즈니스에서 데이터를 가져오는데 사용할 수 있는 인터페이스를 정의합니다. 웹 사이트를 통해 제품을 구매하거나, 원자재 공급을 위한 구매 주문서를 보내거나 손익 계산서를 본사에 업데이트 하는 것처럼 간단한 일을 할 수 있습니다. API를 사용하면 고객, 파트너, 직원등 전체 비즈니스의 이해관계자간의 상호 작용을 구축할 수 있습니다.
+API(Application Programming Inteface)는 내부 및 외부 사용자가 비즈니스에서 데이터를 가져오는데 사용할 수 있는 인터페이스를 정의합니다. 웹 사이트를 통해 제품을 구매하거나, 원자재 공급을 위한 구매 주문서를 보내거나 손익 계산서를 본사에 업데이트 하는 것처럼 간단한 일을 할 수 있습니다. API를 사용하면 고객, 파트너, 직원등 전체 비즈니스의 이해관계자간의 상호 작용을 구축할 수 있습니다. 
 
-### Business Architecture
+### 비즈니스 아키텍처
 
-Let’s dig a bit deep and understand the business architecture of a typical enterprise with an API-driven approach. 
+API 기반 접근 방식을 사용하는 비즈니스 아키텍처를 살펴보고 이해하도록 하겠습니다.
 
 ![API-led-connectivity-1](images/API-led-Business-Transformation-1.png)
 
-Figure 1: API-led connectivity, business architecture
+그림1: API기반 연결 방식 비즈니스 아키텍처
 
-Disclaimer: The original architecture diagram of the above figure can be found in the below link.
-[1] https://blogs.mulesoft.com/dev/api-dev/what-is-api-led-connectivity/
+일반적인 기업에서는 특정 유형의 사용자가 시스템, 애플리케이션 및 데이터와 상호 작용을 합니다. 생태계 내에서의 역할에 따라 다양한 서비스 및 데이터에 대한 접근이 필요합니다. 다양한 사용자의 요구 사항을 충족 시키기 위해 엔터프라이즈 시스템을 3가지 계층으로 분류할 수 있습니다.
 
-In a typical enterprise, there are certain types of users interact with systems, applications, and data. Depending on their role within the enterprise ecosystem, they require different sets of services and information access. To fulfill these requirements of different consumers, we can categorize the enterprise system into 3 main layers of responsibility. 
+* Experience APIs - 사용자는 가치가 높은 데이터에 간편하게 접근하기를 기대합니다. 스마트폰으로 자전거를 구매하려는 사용자는 스마트폰을 통해 자전거의 모든 세부 사항을 알고 싶어합니다. 이 레이어에서 제공되는 데이터는 사용자 경험을 개선합니다.
+* Process APIs - 프로세스 API를 제공하려면 여러 시스템과 데이터 소스의 상호 작용을 위한 데이터 구조 설계가 필요합니다. 이 레이어는 여러 시스템 및 데이터 소스에 대한 오케스트레이션 역할을 하기에 비즈니스의 가치를 창출하고 운영에 민첩성을 제공 합니다.
+* System APIs - 전체 시스템을 대신하여 무거운 작업을 수행할 수 있는 구성 요소가 필요합니다. 이 역할을 시스템 API 레이어에서 담당합니다. 중요한 비즈니스 데이터를 빠르고 안전하게 제공할 수 있도록 데이터 소스 및 Cache와 상호 작용합니다.
 
-- Experience APIs - At the highest interaction point, users (internal and external) expect access to fine-grained, purpose-built, cutting-edge information with high value and easy usage. This is where innovation happens. As an example, a user who wants to buy a bicycle through his mobile phone wants to know every detail of the bicycle through the phone itself (except the real bicycle ride). The data which is exposed to this layer needs to improve the user experience or else it will be invalid. 
-- Process APIs - Providing quality experience APIs require the interaction of multiple systems and data sources and the proper design of data structures. This is where the process API layer comes in handy. This layer acts as the orchestration layer for multiple systems and data sources while fine-tuning the end result for the above layer (Experience API layer). Providing API based access to these capabilities allows users to create value and bring agility to business operations. 
-- System APIs - There should always be a component that does the heavy-lifting on behalf of the entire system. That is what this system APIs layer does. It makes interactions with core data sources and caches where valuable business data resides in for longer periods and provide guarantees of data. These core systems can also expose their functionalities as APIs with proper controls in place so that it is much easier to interact with. 
+위의 아키텍처를 기반으로 비즈니스 아키텍처를 위한 솔루션 아키텍처를 구축해보겠습니다.
 
-
-Note: There will always be systems and data types that need to be processed in an asynchronous manner where you need to put a messaging system (e.g. Kafka, NATS) into the mix. This article does not specifically mention that aspect since this article focuses on APIs. You can always bring in a messaging system and asynchronous communication to this architecture. 
-
-With the above architecture in mind, let’s try to build a solution architecture for this business architecture. 
-
-### Solution Architecture
+### 솔루션 
 Having a layered business architecture allows us to define a solution architecture which is also a layered architecture. But this is not a necessity and someone can come up with a fully distributed solution architecture even with the above-mentioned business architecture if needed. But for the sake of simplicity, let’s take a layered approach with well defined functional components for each layer. 
 
 ![API-led-connectivity-2](images/API-led-Business-Transformation-2.png)
