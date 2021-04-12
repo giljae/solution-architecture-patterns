@@ -1,6 +1,5 @@
 plugins:
   - jekyll-relative-links
-  - jekyll-remote-theme
 relative_links:
   enabled: true
   collections: true
@@ -14,5 +13,4 @@ include:
   - ISSUE_TEMPLATE.md
   - PULL_REQUEST_TEMPLATE.md
 
-#theme: jekyll-theme-cayman
-remote_theme: fernandopasik/jekyll-theme-material-docs
+theme: jekyll-theme-cayman
