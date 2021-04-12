@@ -26,19 +26,19 @@ API 기반 접근 방식을 사용하는 비즈니스 아키텍처를 살펴보�
 
 위의 아키텍처를 기반으로 비즈니스 아키텍처를 위한 솔루션 아키텍처를 구축해보겠습니다.
 
-### 솔루션 
-Having a layered business architecture allows us to define a solution architecture which is also a layered architecture. But this is not a necessity and someone can come up with a fully distributed solution architecture even with the above-mentioned business architecture if needed. But for the sake of simplicity, let’s take a layered approach with well defined functional components for each layer. 
+### 솔루션 아키텍처
+
+비즈니스 아키텍처를 통해 솔루션 아키텍처를 정의할 수 있습니다. 이렇게 작업하는 것은 필수 사항은 아니며 필요한 경우에 활용할 수 있습니다.
 
 ![API-led-connectivity-2](images/API-led-Business-Transformation-2.png)
 
-Figure 2: API-led integration, solution architecture
+그림2 : API 기반 통합, 솔루션 아키텍처
 
-As depicted in the above figure, we can map the functionalities of each layer to certain functional capabilities within enterprise architecture. 
+위의 그림에 표시된 것처럼 각 레이어의 기능을 엔터프라이즈 아키텍처내의 특정 기능과 매핑할 수 있습니다.
 
-- Experience APIs layer can be implemented with an API management platform. This may require a different set of functionalities depending on your enterprise and selecting an API management vendor needs to be done after evaluating the requirements. The fundamental capabilities like security, monitoring, rate-limiting, throttling, caching and better performance are supported by majority of vendors. 
-- One fundamental difference in this API-led connectivity or API-led integration is that you don’t need an API management component at each and every layer though it discusses APIs at each layer. Process APIs layer can be easily implemented with an integration technology platform that is capable of doing protocol translations, message transformations, service orchestration and support for major messaging formats and wire-level protocols. These integrated services can be exposed as managed or un-managed APIs to the upper experience layer. 
-- System APIs layer can sometimes be directly passed through if the core data is coming from those systems through a defined API. If not, there should be a core business logic layer that converts the business-specific, raw data to meaningful data through an intermediate layer. Users can either utilize an existing integration framework or a standard web-services, microservices technology stack to implement this layer. 
-- One major advantage of this proposed API-led integration approach is that every functional capability is available in the means of APIs. Having a centralized developer portal that has details of all the APIs (experience, system, and process) would increase the overall operational efficiency in magnitudes since users do not need to make individual manual requests get certain things implemented on a lower layer. There are API management vendors who can provide this sort of a developer portal as part of their core offering or through a plugin or add-on. 
+* Experience API 레이어는 API 관리 플랫폼으로 구축할 수 있습니다. 이를 위해서 요구 사항을 정의한 후 API 솔루션을 선택해야 합니다. 보안, 모니터링, 속도 제어, Control, Caching등과 같은 기본 기능은 대부분 솔루션에서 지원합니다.
+* API 기반 통합 방식의 장점은 API를 통해 모든 기능을 사용할 수 있다는 것입니다. 모든 API(Experience, Process, System)에 대한 세부 정보가 포함된 개발자 포털을 제공하면 수동 요청이 필요 없어지기에 전반적으로 운영 효율성이 향상됩니다. 솔루션 선택시 이 부분도 고려해야 합니다.
 
-## Final thoughts
-Though people going after hyped words like microservices, containers, serverless, the fundamental architectures for building digital businesses still remains the same. API-led connectivity or API-led integration is such a fundamental concept that can live nicely in both existing monolithic enterprise as well as modern cloud-native, microservices-based enterprise. Any large digital transformation project can be kicked-off with this fundamental architecture pattern and can grow to much bigger projects. Having the fundamental architecture right at the start is crucial in any successful project whether it is large or small. 
+## 결론
+
+일반적으로 현재 시장에서는 마이크로 서비스, 컨테이너, 서버리스와 같은 용어를 추구하지만 디지털 비즈니스 플랫폼 구축을 위한 아키텍처는 항상 필요합니다. API 기반 연결 및 통합은 기존의 Monolithic과 클라우드 네이티브, 마이크로 서비스 기반에서 모두 사용할 수 있는 기본 개념입니다. 모든 디지털 트랜스포메이션 프로젝트에서 규모에 상관없이 기본 아키텍터 패턴으로 사용할 수 있습니다.
