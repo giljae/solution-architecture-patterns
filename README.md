@@ -3,7 +3,7 @@
 
 여기서 소개된 패턴 중 일부는 시장에서 잘 사용되고 있고 일부는 점진적으로 진화하고 있는 패턴입니다.
 
-본 글은 https://github.com/chanakaudaya/solution-architecture-patterns의 글을 한국어로 번역하고 있으며, 언제 완료될지는 아직 알 수 없습니다.
+본 글은 [chanakaudaya](https://github.com/chanakaudaya/solution-architecture-patterns)의 글을 한국어로 번역하고 있으며, 언제 완료될지는 아직 알 수 없습니다.
 
 ## 벤더 중립적 아키텍처 패턴
 
